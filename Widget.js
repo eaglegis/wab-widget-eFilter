@@ -263,6 +263,7 @@ define([
           node.expr = expr;
           // getFilterExpr
           var layerId = filterObj.layerId;
+          var layerId2 = filterObj.layerId2;
           var idx = html.getAttr(node, 'data-index');
           var layerInfo = this.layerInfosObj.getLayerInfoById(layerId);
           if (layerInfo.isShowInMap() && layerInfo.isInScale()) {
@@ -273,7 +274,7 @@ define([
           this._setItemFilter(layerId, idx, node.expr);
           var layerFilterExpr = this._getExpr(layerId);
           this.filterManager.applyWidgetFilter(layerId, this.id, layerFilterExpr);
-          this.filterManager.applyWidgetFilter("DTIP_Tasks_9533_0", this.id, layerFilterExpr);
+          this.filterManager.applyWidgetFilter(layerId2, this.id, layerFilterExpr);
         }
 
         evt.stopPropagation();
